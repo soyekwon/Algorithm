@@ -4,7 +4,7 @@ using namespace std;
 int n;
 
 void rec(int n){
-	if(n<9){
+	if(n<1){
 		cout << n;
 		return;
 	}
