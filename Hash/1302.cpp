@@ -3,40 +3,33 @@
 #include <map>
 using namespace std;
 
-int n;
+int n,m;
 string s;
-string ss;
-map<string, int> a;
-map<string, int>::iterator iter;
+map<string, int> monster1;
+map<int, string> monster2;
 
 int main(){
     //freopen("input.txt", "r", stdin);
-    cin >> n;
+    ios_base::sync_with_stdio(false); cin.tie(NULL); cout.tie(NULL);
+    cin >> n >> m;
 
-    for(int i=0; i<n; i++){
+    for(int i=1; i<=n; i++){
         cin >> s;
-        if(a.count(s)>=1){
-            a[s] ++;
-        }
-        else{
-            a[s] = 1;
-        }
+        monster1[s] = i;
+        monster2[i] = s;
     }
     
-    int max = 0;
-
-    for(iter=a.begin(); iter!=a.end(); iter++){
-        if(iter->second > max){
-            max =  iter->second;
-        }
-    }
-    
-    for(iter=a.begin(); iter!=a.end(); iter++){
-        if(iter->second == max){
-            cout << iter->first;
-            break;
-        }
-    }
+    for(int i=0; i<m; i++){
+    	cin >> s;
+    	if(65 <= (int)s[0] && (int)s[0]<= 90){ // 문자 
+    		cout << monster1[s] << "\n";
+		}
+		else{
+			int i = stoi(s);
+			cout << monster2[i] << "\n";
+		}
+	}
+	
     
     
 
