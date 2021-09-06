@@ -1,47 +1,32 @@
 #include <iostream>
-#include <map>
 #include <string>
-#include <vector>
-#include <sstream>
+#include<sstream>
+#include<map>
 using namespace std;
 
-string s, state;
-map<string, int> a;
-map<string, int>::iterator iter;
+int check = 0;
+string str, ss, s;
+map<string, int> ch;
 
 int main(){
-    freopen("input.txt", "r", stdin);
-    ios_base::sync_with_stdio(false); cin.tie(NULL); cout.tie(NULL);
-	state = "yes";
-
-    getline(cin, s);
-    istringstream ss(s);
-        
-        if(s=="\n"){
-            break;
-        }
-        else if(a.count(s)!=0){
-            a[s] ++;
-        }
-        else{
-            a[s] = 1;
-        }
-
-    
-
-    for(iter=a.begin(); iter!=a.end(); iter++){
-        if(iter->second != 1){
-            state = "no";
-            
-        }
+	//freopen("input.txt","r",stdin);
+	getline(cin, str);
+	stringstream ss(str);
+	
+	while (getline(ss, s, ' ')){
+		if(ch.find(s) != ch.end()){ //find
+			check = 1;
+			break;
+		}
+		else{
+			ch[s] = 1;
+		}
     }
-
-    cout << state;
-
-	
-	
-
-
-
-	
+    
+    if(check == 1){
+    	cout << "no" << "\n";
+	}
+	else{
+		cout << "yes" << "\n";
+	}
 }
