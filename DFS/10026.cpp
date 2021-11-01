@@ -9,16 +9,16 @@ char c;
 
 void rec(int x, int y){
 	check[x][y] = 1;
-	if(x-1>=0 && color[x-1][y]==c){
+	if(x-1>=0 && color[x-1][y]==c && check[x-1][y]==0){
 		rec(x-1,y);
 	}
-	if(x+1<n && color[x+1][y]==c){
+	if(x+1<n && color[x+1][y]==c && check[x+1][y]==0){
 		rec(x+1,y);
 	}
-	if(y-1>=0 && color[x][y-1]==c){
+	if(y-1>=0 && color[x][y-1]==c && check[x][y-1]==0){
 		rec(x,y-1);
 	}
-	if(y+1<n && color[x][y+1]==c){
+	if(y+1<n && color[x][y+1]==c && check[x][y+1]==0){
 		rec(x,y+1);
 	}
 	return;
@@ -26,7 +26,8 @@ void rec(int x, int y){
 
 
 int main(){
-	freopen("input.txt","r",stdin);
+	//freopen("input.txt","r",stdin);
+	ios_base :: sync_with_stdio(false); cin.tie(NULL); cout.tie(NULL);
     cin >> n;
 	
 	for(int i=0; i<n; i++){
@@ -65,7 +66,6 @@ int main(){
 	for(int i=0; i<n; i++){
 		for(int j=0; j<n; j++){
 			if(check[i][j]==0){
-                cout << cnt << " ";
 				c = color[i][j];
 				rec(i,j);
 				cnt++;
