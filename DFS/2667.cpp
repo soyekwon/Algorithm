@@ -8,22 +8,18 @@ int cnt[500]={0,};
 void rec(int x, int y){
 	map[x][y]=dangi+1;
 	if(x-1>=0 && map[x-1][y]==1){
-		map[x-1][y]=dangi+1;
 		house++;
 		rec(x-1,y);
 	}
 	if(x+1<n && map[x+1][y]==1){
-		map[x+1][y]=dangi+1;
 		house++;
 		rec(x+1,y);
 	}
 	if(y-1>=0 && map[x][y-1]==1){
-		map[x][y-1]=dangi+1;
 		house++;
 		rec(x,y-1);
 	}
 	if(y+1<n && map[x][y+1]==1){
-		map[x][y+1]=dangi+1;
 		house++;
 		rec(x,y+1);
 	}
