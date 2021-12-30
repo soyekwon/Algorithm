@@ -3,7 +3,7 @@ using namespace std;
 
 int n;
 int mx = 0;
-int seq[1001];
+int a[1001];
 int dy[1001];
 
 int main(){
