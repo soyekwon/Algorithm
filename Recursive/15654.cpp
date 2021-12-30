@@ -26,8 +26,6 @@ void rec(int x){
 			check[i] = 0;
 		}
 	}
-
-
 }
 
 int main(){
