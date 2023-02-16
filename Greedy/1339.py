@@ -16,7 +16,7 @@ for i in range(n):
             alpha[words[i][j]] += 10 ** (len(words[i])-j-1)
         else:
             alpha[words[i][j]] = 10 ** (len(words[i])-j-1)
-            
+
 for i in alpha.values():  # dict에 저장된 수들을 모두 리스트에 추가
     nn.append(i)
     
