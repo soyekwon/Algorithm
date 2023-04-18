@@ -1,36 +1,35 @@
 #include <iostream>
+#include <stack>
 #include <string>
 using namespace std;
 
-int main(){
-	int t;
-	cin >> t;
-	for(int i=0; i<t; i++){
-		string garo;
-		cin >> garo;
-		int len = garo.length();
-		int ln=0;
-		int cnt=0;
-		for(int j=0; j<len; j++){
-			if(garo.at(j)=='('){
-				ln++;
-			}
-			else if(garo.at(j)==')'){
-				ln--;
-			}
-			if(ln<0){
-				cout << "NO" << endl;
-				cnt++;
-				break;
-			} 
-			
-			
+int n;
+string str;
+
+int main()
+{
+    ios_base::sync_with_stdio(false); cin.tie(NULL); cout.tie(NULL);
+    //freopen("input.txt","r",stdin);
+	
+    cin >> n;
+    while(n--){
+        cin >> str;
+        stack<char> st;
+        for(int i=0; i<str.length(); i++){
+            if(str[i]=='(' || st.empty()){
+                st.push(str[i]);
+            }
+            else{
+                if(st.top()=='('){
+                	st.pop();
+            	}
+            }
+        }
+        if(st.empty()){
+        	cout << "YES" << "\n";
 		}
-		if(ln==0&&cnt==0){
-			cout << "YES" << endl;
+		else{
+			cout << "NO" << "\n";
 		}
-		else if(ln>0||ln<0&&cnt==0) {
-			cout << "NO" << endl;
-		}
-	}
+    }
 }
