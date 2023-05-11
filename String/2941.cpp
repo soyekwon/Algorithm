@@ -15,7 +15,7 @@ int main()
 	for(int i=0; i<8; i++){
 		while(1){
 			idx = str.find(ss[i]);
-			if(idx == string::npos){
+			if(idx == -1){
 				break;
 			}
 			else{
@@ -25,3 +25,4 @@ int main()
 	}
 	cout << str.length();
 }
+

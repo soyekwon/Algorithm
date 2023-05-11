@@ -21,7 +21,6 @@ int main(){
 		q.push(q.front());
 		q.pop();
 	}
-	
 	cout << q.back();
-		
 }
+
