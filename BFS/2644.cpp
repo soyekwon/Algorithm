@@ -16,7 +16,6 @@ void bfs(int xx){
 	check[xx] = 1;
 	
 	do{
-		
 		x = q1.front();
 		y = q2.front();
 		if(x==b){
@@ -33,12 +32,11 @@ void bfs(int xx){
 			}
 		}
 		
-		if(q1.empty()){
+		if(q1.empty()){  // 가족이 아니면
 			check2 = 1;
 			break;
 		}
 	}while(1);
-	
 }
 
 int main(){
