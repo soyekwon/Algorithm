@@ -5,7 +5,6 @@ using namespace std;
 int main() {
 	int cnt = 1;
 	string str;
-	
 	getline(cin, str);
 	int len = str.length();
 
